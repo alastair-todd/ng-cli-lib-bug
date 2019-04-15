@@ -134,6 +134,76 @@
           }
         }
       }
+    },
+    "one": {
+      "root": "projects/one",
+      "sourceRoot": "projects/one/src",
+      "projectType": "library",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/one/tsconfig.lib.json",
+            "project": "projects/one/ng-package.json"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/one/src/test.ts",
+            "tsConfig": "projects/one/tsconfig.spec.json",
+            "karmaConfig": "projects/one/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/one/tsconfig.lib.json",
+              "projects/one/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    },
+    "two": {
+      "root": "projects/two",
+      "sourceRoot": "projects/two/src",
+      "projectType": "library",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/two/tsconfig.lib.json",
+            "project": "projects/two/ng-package.json"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/two/src/test.ts",
+            "tsConfig": "projects/two/tsconfig.spec.json",
+            "karmaConfig": "projects/two/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/two/tsconfig.lib.json",
+              "projects/two/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
     }
   },
   "defaultProject": "ng-work"
